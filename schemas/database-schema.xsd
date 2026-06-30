@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Users Schema -->
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="username" type="xs:string"/>
+                            <xs:element name="fullname" type="xs:string" minOccurs="0"/>
+                            <xs:element name="email" type="xs:string"/>
+                            <xs:element name="role" type="roleType"/>
+                            <xs:element name="created_at" type="xs:dateTime"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Events Schema -->
+    <xs:element name="events">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="event" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="date" type="xs:date"/>
+                            <xs:element name="venue" type="xs:string"/>
+                            <xs:element name="time_range" type="xs:string"/>
+                            <xs:element name="category" type="xs:string"/>
+                            <xs:element name="description" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Modules Schema -->
+    <xs:element name="modules">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="module_number" type="xs:integer"/>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="type" type="moduleType"/>
+                            <xs:element name="description" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Simple Types -->
+    <xs:simpleType name="roleType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="admin"/>
+            <xs:enumeration value="student"/>
+            <xs:enumeration value="user"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="moduleType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="reading"/>
+            <xs:enumeration value="quiz"/>
+            <xs:enumeration value="worksheet"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

@@ -1,0 +1,56 @@
+:root {
+    --primary-green: #2e7d32;
+    --accent-yellow: #fdd835;
+    --bg-color: #f4f7f6;
+    --text-dark: #333;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: var(--primary-green);
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; text-align: center; }
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-yellow);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 300px;
+    padding: 40px;
+    width: calc(100% - 300px);
+}
+
+/* Card Style for Dashboard Modules */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}

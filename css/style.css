@@ -1,0 +1,774 @@
+/* ==========================================================================
+   YOUTH FOR JUST FOOD SYSTEMS
+   OFFICIAL WEBSITE STYLESHEET
+   ========================================================================== */
+
+:root {
+    /* COLORS */
+    --primary-green: #2E7D32;
+    --secondary-green: #A5D6A7;
+    --accent-yellow: #FDD835;
+    --accent-blue: #1565C0;
+    --text-black: #212121;
+    --background-white: #FAFAFA;
+    --light-gray: #f4f4f4;
+    --border: #e0e0e0;
+
+    /* DESIGN */
+    --radius: 20px;
+    --shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background-white);
+    color: var(--text-black);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   GLOBAL LAYOUT ELEMENTS
+   ========================================================================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-green);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--accent-yellow);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(253, 216, 53, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   NAVBAR SECTION
+   ========================================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 65px;
+    height: auto;
+}
+
+.logo-text {
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   HERO BANNER CONFIGURATIONS
+   ========================================================================== */
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(46,125,50,.82), rgba(67,160,71,.82)), url('../images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    background: var(--accent-yellow);
+    color: black;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-btn-outline:hover {
+    background: white;
+    color: var(--primary-green);
+}
+
+/* Custom Module Background Mappings */
+.learning-hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.85)), url('../images/hero.jpg') no-repeat center center/cover;
+}
+
+.resources-hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.85)), url('../images/hero.jpg') no-repeat center center/cover;
+}
+
+.events-hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.85)), url('../images/hero.jpg') no-repeat center center/cover;
+}
+
+/* ==========================================================================
+   CARDS & CONTAINERS
+   ========================================================================== */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+}
+
+.value-card {
+    border-top: 6px solid var(--primary-green);
+}
+
+.resource-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   HOME COMPONENT MODULES
+   ========================================================================== */
+
+/* Mission Section */
+.mission {
+    background: var(--secondary-green);
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.mission h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+/* Statistics Counter Row */
+.stats {
+    background: var(--primary-green);
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    margin-top: 10px;
+}
+
+/* Program Activation Panels */
+.program-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.program-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 25px;
+}
+
+/* Media/News Display Grid */
+.news-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-date {
+    color: gray;
+    font-size: .9rem;
+    margin-bottom: 10px;
+}
+
+/* SDG Global Goals Integration */
+.sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.sdg-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.sdg-card h4 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+/* Call to Action Module */
+.cta {
+    background: linear-gradient(135deg, var(--primary-green), #43A047);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   FORMS & FILTER MECHANISMS
+   ========================================================================== */
+
+.search-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.filter-select {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+form {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ==========================================================================
+   ADMIN MANAGEMENT INTERFACES
+   ========================================================================== */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.admin-table th {
+    background: var(--primary-green);
+    color: white;
+    padding: 15px;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.edit-btn {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.delete-btn {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   FOOTER MARGINS
+   ========================================================================== */
+
+footer {
+    background: var(--primary-green);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer-logo {
+    width: 110px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sdg-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .sdg-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    .search-filter {
+        flex-direction: column;
+    }
+    .logo-img {
+        width: 55px;
+    }
+}
+
+/* Isolation fix: Prevents global inputs/select fields from warping the calendar grid cells */
+#calendar input, 
+#calendar select {
+    width: auto !important;
+    margin-bottom: 0 !important;
+    padding: initial !important;
+}
+
+/* Day cell pointer hover indicators */
+.fc-daygrid-day {
+    cursor: pointer !important;
+}
+.fc-daygrid-day:hover {
+    background-color: #f4fbf4 !important; /* Extremely pale green shimmer when hovering */
+}
+
+#calendar {
+    max-width: 350px; 
+    margin: 0 auto;
+}
+
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border: none !important;
+}
+
+.fc-toolbar-title {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    color: #333 !important;
+}
+
+.fc-today-button, 
+.fc-dayGridMonth-button, 
+.fc-timeGridWeek-button {
+    display: none !important;
+}
+
+.fc .fc-button-primary {
+    background-color: transparent !important;
+    border: none !important;
+    color: #2E7D32 !important; 
+    box-shadow: none !important;
+    padding: 0 10px !important;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: transparent !important;
+    color: #1b4b1e !important;
+}
+
+.fc .fc-button-primary:focus {
+    box-shadow: none !important;
+}
+
+.fc-col-header-cell-cushion {
+    font-size: 0.75rem !important;
+    color: #777 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    padding-bottom: 10px !important;
+}
+
+.fc-daygrid-day-number {
+    font-size: 0.75rem !important;
+    color: #777 !important;
+    text-decoration: none !important;
+    width: 100%;
+    text-align: center;
+}
+
+.fc .fc-daygrid-day-frame {
+    min-height: 35px !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fc-daygrid-event {
+    background-color: #2E7D32 !important;
+    border-radius: 50% !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 auto !important;
+    border: none !important;
+    cursor: pointer !important;
+    position: absolute;
+    z-index: -1;
+}
+
+.fc-event-title, .fc-event-time {
+    display: none !important;
+}
+
+.fc-daygrid-day:has(.fc-daygrid-event) .fc-daygrid-day-number {
+    color: #fff !important;
+    font-weight: 700 !important;
+    z-index: 2;
+}
+
+.fc-daygrid-day {
+    cursor: pointer !important;
+}
+
+.fc-daygrid-day:hover {
+    background-color: #f4fbf4 !important;
+}
+
+#calendar input, 
+#calendar select {
+    width: auto !important;
+    margin-bottom: 0 !important;
+    padding: initial !important;
+}
+
+/* ==========================
+   LEADERSHIP GRID FIX (CLEAN 4-CARD ROW)
+========================== */
+
+.leadership-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 1024px){
+    .leadership-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 600px){
+    .leadership-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CARD (SMALLER + TIGHTER) */
+.leader-card{
+    background: #fff;
+    padding: 18px 15px;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+/* hover */
+.leader-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.leader-img{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #A5D6A7;
+    margin-bottom: 10px;
+}
+
+/* NAME */
+.leader-card h3{
+    font-size: 1rem;
+    color: #2E7D32;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+/* ROLE */
+.leader-role{
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #1565C0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPTION (COMPACT) */
+.leader-description{
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #555;
+    text-align: justify;
+}
+
+/* strong emphasis */
+.leader-description strong{
+    color: #2E7D32;
+    font-weight: 700;
+}
+
+/* Style the number container for days with events */
+.fc-daygrid-day.has-event .fc-daygrid-day-number {
+    background-color: #2E7D32; /* Match your brand yellow */
+    color: #111111;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: center;
+    align-items: center;
+    justify-content: center;
+}

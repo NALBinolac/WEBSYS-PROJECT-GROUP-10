@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ROOT ELEMENTS -->
+<!ELEMENT ngo-data (users | events | modules | volunteers | donations)*>
+
+<!-- USERS SECTION -->
+<!ELEMENT users (user*)>
+<!ELEMENT user (username, fullname, email, role, created_at)>
+<!ATTLIST user id ID #REQUIRED>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT fullname (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT role (#PCDATA)>
+<!ELEMENT created_at (#PCDATA)>
+
+<!-- EVENTS SECTION -->
+<!ELEMENT events (event*)>
+<!ELEMENT event (title, date, venue, time_range, category, description?)>
+<!ATTLIST event id ID #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT venue (#PCDATA)>
+<!ELEMENT time_range (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!-- MODULES SECTION -->
+<!ELEMENT modules (module*)>
+<!ELEMENT module (module_number, title, type, description?)>
+<!ATTLIST module id ID #REQUIRED>
+<!ELEMENT module_number (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+
+<!-- VOLUNTEERS SECTION -->
+<!ELEMENT volunteers (volunteer*)>
+<!ELEMENT volunteer (fullname, email, skills?, interests?, availability?, status)>
+<!ATTLIST volunteer id ID #REQUIRED>
+<!ELEMENT skills (#PCDATA)>
+<!ELEMENT interests (#PCDATA)>
+<!ELEMENT availability (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+
+<!-- DONATIONS SECTION -->
+<!ELEMENT donations (donation*)>
+<!ELEMENT donation (donor_name, email, amount, payment_channel, purpose?, created_at)>
+<!ATTLIST donation id ID #REQUIRED>
+<!ELEMENT donor_name (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT payment_channel (#PCDATA)>
+<!ELEMENT purpose (#PCDATA)>
